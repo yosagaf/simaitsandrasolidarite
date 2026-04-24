@@ -150,9 +150,22 @@ p  { margin: 0 0 1em; }
     color: var(--color-blue);
 }
 .brand-logo { width: 48px; height: 48px; object-fit: contain; }
-.brand-text { display: flex; flex-direction: column; line-height: 1; }
-.brand-line1 { font-size: .95rem; letter-spacing: .01em; }
-.brand-line2 { font-size: .85rem; color: var(--color-green); font-weight: 700; }
+.brand-text { display: flex; flex-direction: column; line-height: 1; gap: .2rem; }
+.brand-acronym {
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: .14em;
+    color: var(--color-blue);
+    line-height: 1;
+}
+.brand-fullname {
+    font-size: .68rem;
+    font-weight: 600;
+    color: var(--color-green);
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    line-height: 1;
+}
 
 .primary-nav {
     display: flex;
@@ -270,6 +283,26 @@ p  { margin: 0 0 1em; }
     letter-spacing: .06em;
     text-transform: uppercase;
     margin-bottom: 1.2rem;
+}
+.eyebrow-sis {
+    display: inline-flex;
+    align-items: center;
+    gap: .55rem;
+    padding: .32rem .9rem .32rem .35rem;
+    background: rgba(0, 59, 122, 0.06);
+}
+.sis-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: .3rem .6rem;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--color-blue) 0%, var(--color-blue-dark) 100%);
+    color: #fff;
+    font-weight: 800;
+    font-size: .82rem;
+    letter-spacing: .14em;
+    box-shadow: 0 4px 10px rgba(0, 59, 122, 0.25);
 }
 .hero h1 { margin-bottom: 1.2rem; }
 .highlight {
@@ -563,7 +596,22 @@ p  { margin: 0 0 1em; }
 }
 .footer-brand { display: flex; gap: 1rem; align-items: flex-start; }
 .footer-logo { width: 56px; height: 56px; object-fit: contain; background: #fff; border-radius: 12px; padding: 6px; }
-.footer-brand strong { display: block; color: #fff; font-size: 1rem; letter-spacing: .02em; }
+.footer-name { display: flex; flex-direction: column; gap: .25rem; }
+.footer-acronym {
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: .16em;
+    color: #fff;
+    line-height: 1;
+}
+.footer-fullname {
+    font-size: .75rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.78);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    line-height: 1;
+}
 .footer-tag { display: block; color: var(--color-gold); font-weight: 600; font-size: .85rem; margin-top: .15rem; }
 .footer-desc { margin-top: .7rem; font-size: .9rem; color: rgba(255,255,255,0.7); max-width: 42ch; }
 
