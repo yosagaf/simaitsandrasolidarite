@@ -30,6 +30,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 90px;
     -webkit-text-size-adjust: 100%;
 }
 
@@ -48,6 +49,20 @@ img { max-width: 100%; display: block; }
 
 a { color: var(--color-blue); text-decoration: none; transition: color .2s ease; }
 a:hover { color: var(--color-gold-dark); }
+
+:focus-visible {
+    outline: 3px solid var(--color-gold);
+    outline-offset: 3px;
+    border-radius: 6px;
+}
+.btn:focus-visible {
+    outline: 3px solid var(--color-gold);
+    outline-offset: 4px;
+}
+.btn-ghost-light:focus-visible,
+.section-impact .btn:focus-visible {
+    outline-color: #fff;
+}
 
 h1, h2, h3, h4 {
     font-family: var(--font);
@@ -150,21 +165,13 @@ p  { margin: 0 0 1em; }
     color: var(--color-blue);
 }
 .brand-logo { width: 48px; height: 48px; object-fit: contain; }
-.brand-text { display: flex; flex-direction: column; line-height: 1; gap: .2rem; }
-.brand-acronym {
-    font-size: 1.4rem;
-    font-weight: 800;
-    letter-spacing: .14em;
-    color: var(--color-blue);
-    line-height: 1;
-}
+.brand-text { display: flex; flex-direction: column; line-height: 1; }
 .brand-fullname {
-    font-size: .68rem;
-    font-weight: 600;
-    color: var(--color-green);
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    line-height: 1;
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--color-blue);
+    letter-spacing: .01em;
+    line-height: 1.15;
 }
 
 .primary-nav {
@@ -334,7 +341,7 @@ p  { margin: 0 0 1em; }
 
 .hero-visual {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: 1rem;
     position: relative;
 }
@@ -359,17 +366,16 @@ p  { margin: 0 0 1em; }
 }
 .card-blue { border-top: 4px solid var(--color-blue); }
 .card-blue .visual-icon { background: rgba(0, 59, 122, 0.08); color: var(--color-blue); }
-.card-green { border-top: 4px solid var(--color-green); grid-row: span 2; align-self: stretch; display: flex; flex-direction: column; justify-content: center; }
+.card-green { border-top: 4px solid var(--color-green); }
 .card-green .visual-icon { background: rgba(46, 125, 50, 0.10); color: var(--color-green); }
 .card-gold { border-top: 4px solid var(--color-gold); }
 .card-gold .visual-icon { background: rgba(226, 163, 22, 0.15); color: var(--color-gold-dark); }
 
 @media (max-width: 900px) {
     .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-    .hero-visual { grid-template-columns: repeat(2, 1fr); }
-    .card-green { grid-row: auto; }
+    .hero-visual { grid-template-columns: repeat(3, 1fr); }
 }
-@media (max-width: 540px) {
+@media (max-width: 600px) {
     .hero-visual { grid-template-columns: 1fr; }
 }
 
@@ -449,7 +455,7 @@ p  { margin: 0 0 1em; }
 /* Actions */
 .actions-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.4rem;
 }
 .action-card {
@@ -480,7 +486,8 @@ p  { margin: 0 0 1em; }
 .badge-green { background: var(--color-green); }
 .badge-gold { background: var(--color-gold); color: var(--color-blue-dark); }
 .action-card p { margin: 0; color: var(--color-text-soft); }
-@media (max-width: 720px) { .actions-grid { grid-template-columns: 1fr; } }
+@media (max-width: 960px) { .actions-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .actions-grid { grid-template-columns: 1fr; } }
 
 /* Impact */
 .section-impact {
@@ -595,7 +602,7 @@ p  { margin: 0 0 1em; }
     border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 .footer-brand { display: flex; gap: 1rem; align-items: flex-start; }
-.footer-logo { width: 56px; height: 56px; object-fit: contain; background: #fff; border-radius: 12px; padding: 6px; }
+.footer-logo { width: 56px; height: 56px; object-fit: contain; }
 .footer-name { display: flex; flex-direction: column; gap: .25rem; }
 .footer-acronym {
     font-size: 1.6rem;
@@ -653,6 +660,18 @@ p  { margin: 0 0 1em; }
     opacity: 1;
     transform: translateY(0);
 }
+.hero-visual .reveal:nth-child(2),
+.values-grid .reveal:nth-child(2),
+.actions-grid .reveal:nth-child(2),
+.contact-grid .reveal:nth-child(2) { transition-delay: .08s; }
+.hero-visual .reveal:nth-child(3),
+.values-grid .reveal:nth-child(3),
+.actions-grid .reveal:nth-child(3),
+.contact-grid .reveal:nth-child(3) { transition-delay: .16s; }
+.values-grid .reveal:nth-child(4),
+.actions-grid .reveal:nth-child(4) { transition-delay: .24s; }
+.actions-grid .reveal:nth-child(5) { transition-delay: .32s; }
+.actions-grid .reveal:nth-child(6) { transition-delay: .40s; }
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
